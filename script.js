@@ -2,12 +2,13 @@
 
 var startGameButton = document.querySelector('.start-game-button');
 var canvas = document.querySelector('.canvas');
-canvas.width = 640;
-canvas.height = 480;
+canvas.width = 1000;
+canvas.height = 500;
 var ctx = canvas.getContext('2d');
-var textStyle = '50px Helvetica';
+var textStyle = '80px Helvetica';
 var startTime;
 var time;
+var keysPerSecond;
 var game = {
     state: '',
     text: '',
@@ -56,6 +57,12 @@ var renderHighScore = function () {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillText(time + ' seconds', canvas.width / 2, canvas.height / 2);
+
+    ctx.font = '45px Helvetica';
+    ctx.fillStyle = 'black';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(keysPerSecond + ' keys per second', canvas.width / 2, (canvas.height / 2) + 80);
 };
 
 var main = function () {
@@ -96,6 +103,7 @@ var handleKeydown = function (e) {
     if (!game.text[game.nextLetter]) {
         var endTime = new Date().getTime();
         time = parseFloat(((endTime - startTime) / 1000).toFixed(2));
+        keysPerSecond = parseFloat((game.text.split(' ').join('').length / time).toFixed(2));
         document.removeEventListener('keydown', handleKeydown, false);
         game.state = 'highScore';
         return;

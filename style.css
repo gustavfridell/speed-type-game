@@ -3,10 +3,10 @@ body {
 }
 
 .canvas {
+    display: block;
     border: 1px solid black;
 }
 
 .words-input {
-    display: block;
     width: 400px;
 }
