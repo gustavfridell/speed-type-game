@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+}
+
+.canvas {
+    border: 1px solid black;
+}
+
+.words-input {
+    display: block;
+    width: 400px;
+}

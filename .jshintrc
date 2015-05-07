@@ -1,0 +1,49 @@
+{
+    "node": true,
+    "browser": true,
+    "esnext": true,
+    "bitwise": false,
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": true,
+    "noarg": true,
+    "regexp": false,
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "globals": {
+        // Browser
+        "angular": false,
+        "jQuery": false,
+
+        // Custom
+        "sp": false,
+
+        // NodeJS
+        "module": false,
+        "require": false,
+
+        // angular-mocks
+        "inject": false,
+
+        // jasmine
+        "expect": false,
+        "before": false,
+        "beforeEach": false,
+        "after": false,
+        "afterEach": false,
+        "it": false,
+        "fit": false,
+        "xit": false,
+        "describe": false,
+        "fdescribe": false,
+        "xdescribe": false,
+        "jasmine": false,
+        "spyOn": false,
+
+        // protractor
+        "element": false,
+        "by": false,
+        "browser": false
+    }
+}
